@@ -1,11 +1,14 @@
 const path = require('path');
 
 module.exports = {
-    context: __dirname,
     entry: './entry.js',
     output: {
         path: path.resolve(__dirname),
         filename: 'bundle.js'
+    },
+    devtool: 'source-map',
+    resolve: {
+        extensions: [".js", ".jsx", "*"],
     },
     module: {
         rules: [
@@ -14,17 +17,11 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: {
                     loader: 'babel-loader',
-                    query: {
+                    options: {
                         presets: ['@babel/env', '@babel/react']
                     }
                 },
             }
         ]
-    },
-    devtool: 'source-map',
-    resolve: {
-        extensions: [".js", ".jsx", "*"]
     }
-};
-
-
+}
