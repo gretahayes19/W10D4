@@ -1,6 +1,26 @@
-import {createStore} from 'redux' 
-import reducer from "../reducers/reducer"
+import {createStore} from 'redux';
+import todosReducer from "../reducers/todos_reducer";
+import rootReducer from "../reducers/root_reducer";
 
-const store = createStore(reducer);
+const configureStore = (preloadedState = {}) => {
+    return createStore(rootReducer, preloadedState)
+};
 
-export default store 
+export default configureStore; 
+
+
+//State Shape: 
+// {
+//     1: {
+//         id: 1,
+//         title: 'wash car',
+//         body: 'with soap',
+//         done: false
+//     },
+//     2: {
+//         id: 2,
+//         title: 'wash dog',
+//         body: 'with shampoo',
+//         done: true
+//     },
+// }
