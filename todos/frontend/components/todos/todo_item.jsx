@@ -1,4 +1,5 @@
 import React from 'react' 
+import TodoDetailView from './todo_detailview';
 
 export default class TodoItem extends React.Component {
 
@@ -9,41 +10,37 @@ export default class TodoItem extends React.Component {
             title: props.todo.title,
             body: props.todo.body,
             done: props.todo.done,
+            detail: false,
         }
-
-        this.handleDelete = this.handleDelete.bind(this);
-        this.toggleDone = this.toggleDone.bind(this);
+        this.hideDetails = this.hideDetails.bind(this);
     }
 
-    toggleDone(e) {
-        e.preventDefault();
+    hideDetails(e) {
         this.setState({
-            done: !this.state.done,
+            detail: !this.state.detail,
         })
     }
 
-    handleDelete(e) {
-        e.preventDefault();
-        this.props.removeTodo(this.props.todo);
-    }   
 
     render() {
-        let done;
-        if (this.state.done) {
-            done = "Done"
-        } else {
-            done = "Not Done"
+
+        const todo = this.props.todo;
+        let deet;
+        if (this.state.detail) {
+            deet = <TodoDetailView removeTodo={this.props.removeTodo} todo={todo} />
         }
+
         return (
-            <li>{this.state.title}
-            <br></br>
-                <button onClick={this.handleDelete}>Remove Todo</button>
-                &nbsp;
-                <button onClick={this.toggleDone}>{`${done}`}</button>
-            </li> 
+            <div>
+                <h3 onClick={this.hideDetails}>Title: {this.state.title}</h3>
+                {deet}
+            </div>
         )
     }
 
 
 }
+
+
+
 
