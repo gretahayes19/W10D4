@@ -13,11 +13,12 @@ export default class ToDo extends React.Component {
         return(
             <div>
 
-            <TodoForm receiveTodo={this.props.receiveTodo}/>
+                <TodoForm receiveTodo={this.props.receiveTodo}/>
 
-            <ul>
-                {todos.map((todo) => <TodoItem key={todo.id}todo={todo} />)}
-            </ul>
+                <h2>All Todos</h2>
+                <ul>
+                    {todos.map((todo) => <TodoItem removeTodo={this.props.removeTodo} key={todo.id}todo={todo} />)}
+                </ul>
 
             </div>
         )
