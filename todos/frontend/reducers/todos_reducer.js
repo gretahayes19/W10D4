@@ -45,24 +45,3 @@ const todosReducer = (state = initialState, action) => {
 export default todosReducer;
 
 
-
-// const newTodos = [
-//     {
-//         id: 1,
-//         title: "a",
-//         body: "a",
-//         done: false
-//     },
-//     {
-//         id: 2,
-//         title: "b",
-//         body: "b",
-//         done: true
-//     },
-//     {
-//         id: 3,
-//         title: "c",
-//         body: "c",
-//         done: true
-//     }
-// ];
