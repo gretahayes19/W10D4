@@ -60,6 +60,36 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 /***/ }),
 
+/***/ "./frontend/actions/error_actions.js":
+/*!*******************************************!*\
+  !*** ./frontend/actions/error_actions.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "RECEIVE_ERRORS": () => (/* binding */ RECEIVE_ERRORS),
+/* harmony export */   "CLEAR_ERRORS": () => (/* binding */ CLEAR_ERRORS),
+/* harmony export */   "clearErrors": () => (/* binding */ clearErrors),
+/* harmony export */   "receiveErrors": () => (/* binding */ receiveErrors)
+/* harmony export */ });
+var RECEIVE_ERRORS = "RECEIVE_ERRORS";
+var CLEAR_ERRORS = "CLEAR_ERRORS";
+var clearErrors = function clearErrors() {
+  return {
+    type: CLEAR_ERRORS
+  };
+};
+var receiveErrors = function receiveErrors(errors) {
+  return {
+    type: RECEIVE_ERRORS,
+    errors: errors
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/step_actions.js":
 /*!******************************************!*\
   !*** ./frontend/actions/step_actions.js ***!
@@ -119,6 +149,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "createTodoAction": () => (/* binding */ createTodoAction)
 /* harmony export */ });
 /* harmony import */ var _util_todo_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/todo_api_util */ "./frontend/util/todo_api_util.js");
+/* harmony import */ var _error_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./error_actions */ "./frontend/actions/error_actions.js");
+
 
 var RECEIVE_TODOS = "RECEIVE_TODOS";
 var RECEIVE_TODO = "RECEIVE_TODO";
@@ -149,11 +181,12 @@ var fetchTodos1 = function fetchTodos1() {
     });
   };
 };
-var createTodoAction = function createTodoAction() {
+var createTodoAction = function createTodoAction(todo) {
   return function (dispatch) {
-    return _util_todo_api_util__WEBPACK_IMPORTED_MODULE_0__.createTodo().then(function (todo) {
-      console.log(todo);
-      return dispatch(receiveTodo(todo));
+    return _util_todo_api_util__WEBPACK_IMPORTED_MODULE_0__.createTodo(todo).then(function (newTodo) {
+      return dispatch(receiveTodo(newTodo));
+    }, function (err) {
+      return dispatch((0,_error_actions__WEBPACK_IMPORTED_MODULE_1__.receiveErrors)(err.responseJSON));
     });
   };
 };
@@ -309,6 +342,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _todo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todo */ "./frontend/components/todos/todo.jsx");
 /* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
 /* harmony import */ var _actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/todo_actions */ "./frontend/actions/todo_actions.js");
+/* harmony import */ var _actions_error_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/error_actions */ "./frontend/actions/error_actions.js");
+
 
 
 
@@ -334,8 +369,14 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchTodos: function fetchTodos() {
       return dispatch((0,_actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.fetchTodos1)());
     },
-    createTodo: function createTodo() {
-      return dispatch((0,_actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.createTodoAction)());
+    createTodo: function createTodo(todo) {
+      return dispatch((0,_actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.createTodoAction)(todo));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch((0,_actions_error_actions__WEBPACK_IMPORTED_MODULE_4__.clearErrors)());
+    },
+    receiveErrors: function receiveErrors(errors) {
+      return dispatch((0,_actions_error_actions__WEBPACK_IMPORTED_MODULE_4__.receiveErrors)(errors));
     }
   };
 };
