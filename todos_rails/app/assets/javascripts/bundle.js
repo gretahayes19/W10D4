@@ -115,7 +115,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "receiveTodos": () => (/* binding */ receiveTodos),
 /* harmony export */   "receiveTodo": () => (/* binding */ receiveTodo),
 /* harmony export */   "removeTodo": () => (/* binding */ removeTodo),
-/* harmony export */   "fetchTodos1": () => (/* binding */ fetchTodos1)
+/* harmony export */   "fetchTodos1": () => (/* binding */ fetchTodos1),
+/* harmony export */   "createTodoAction": () => (/* binding */ createTodoAction)
 /* harmony export */ });
 /* harmony import */ var _util_todo_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/todo_api_util */ "./frontend/util/todo_api_util.js");
 
@@ -145,6 +146,14 @@ var fetchTodos1 = function fetchTodos1() {
     return _util_todo_api_util__WEBPACK_IMPORTED_MODULE_0__.fetchTodos().then(function (todos) {
       console.log(todos);
       return dispatch(receiveTodos(todos));
+    });
+  };
+};
+var createTodoAction = function createTodoAction() {
+  return function (dispatch) {
+    return _util_todo_api_util__WEBPACK_IMPORTED_MODULE_0__.createTodo().then(function (todo) {
+      console.log(todo);
+      return dispatch(receiveTodo(todo));
     });
   };
 };
@@ -256,13 +265,18 @@ var ToDo = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(ToDo, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchTodos();
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this = this;
 
       var todos = this.props.todos;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_todo_form__WEBPACK_IMPORTED_MODULE_2__.default, {
-        receiveTodo: this.props.receiveTodo
+        createTodo: this.props.createTodo
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h2", null, "All Todos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", null, todos.map(function (todo) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_todo_item__WEBPACK_IMPORTED_MODULE_1__.default, {
           removeTodo: _this.props.removeTodo,
@@ -317,8 +331,11 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     removeTodo: function removeTodo(todo) {
       return dispatch((0,_actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.removeTodo)(todo));
     },
-    fetchTodos1: function fetchTodos1() {
+    fetchTodos: function fetchTodos() {
       return dispatch((0,_actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.fetchTodos1)());
+    },
+    createTodo: function createTodo() {
+      return dispatch((0,_actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.createTodoAction)());
     }
   };
 };
@@ -519,8 +536,16 @@ var TodoForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
-      this.props.receiveTodo(this.state);
+      this.props.createTodo(this.state).then(function () {
+        return _this2.setState({
+          title: '',
+          body: ''
+        });
+      }); //  debugger
+
       this.setState({
         id: this.uniqueId(),
         title: "",
@@ -34563,6 +34588,7 @@ window.allTodos = _reducers_selectors__WEBPACK_IMPORTED_MODULE_6__.allTodos;
 window.stepsByTodoId = _reducers_selectors__WEBPACK_IMPORTED_MODULE_6__.stepsByTodoId;
 window.fetchTodos = _util_todo_api_util__WEBPACK_IMPORTED_MODULE_7__.fetchTodos;
 window.createTodo = _util_todo_api_util__WEBPACK_IMPORTED_MODULE_7__.createTodo;
+window.createTodoAction = _actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.createTodoAction;
 window.fetchTodos1 = _actions_todo_actions__WEBPACK_IMPORTED_MODULE_3__.fetchTodos1;
 })();
 

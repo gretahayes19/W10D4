@@ -506,3 +506,322 @@ Processing by Api::TodosController#index as */*
 Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for ::1 at 2021-03-08 16:10:15 -0500
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/vh1laptop/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1923ms (Views: 1922.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-08 16:10:23 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-08 16:11:25 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 402ms (Views: 401.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:11:25 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (20.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 54ms (Views: 11.9ms | ActiveRecord: 29.7ms)
+
+
+Started GET "/" for ::1 at 2021-03-08 16:18:52 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 417ms (Views: 416.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:18:52 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (2.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2021-03-08 16:19:41 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 423ms (Views: 422.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:19:42 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (2.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:19:47 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+
+Started GET "/" for ::1 at 2021-03-08 16:20:35 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 419ms (Views: 418.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:20:35 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (9.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 19ms (Views: 9.6ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:20:39 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:20:40 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+
+Started GET "/" for ::1 at 2021-03-08 16:22:38 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 456ms (Views: 455.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:22:39 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:22:43 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+
+Started GET "/" for ::1 at 2021-03-08 16:23:27 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 428ms (Views: 427.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:23:27 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2021-03-08 16:24:11 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 440ms (Views: 440.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:24:11 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+
+Started GET "/" for ::1 at 2021-03-08 16:24:21 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 442ms (Views: 442.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:24:22 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:24:30 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+
+Started GET "/" for ::1 at 2021-03-08 16:24:45 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 28ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:24:45 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (8.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 13ms (Views: 4.4ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:24:54 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+
+Started GET "/" for ::1 at 2021-03-08 16:27:24 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 414ms (Views: 413.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:27:25 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (1.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 4ms (Views: 2.2ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:27:29 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+
+Started GET "/" for ::1 at 2021-03-08 16:30:53 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 504ms (Views: 503.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:30:54 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (14.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 16ms (Views: 1.7ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/" for ::1 at 2021-03-08 16:32:52 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 435ms (Views: 434.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:32:53 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (1.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 4ms (Views: 2.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2021-03-08 16:33:16 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 444ms (Views: 444.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:33:17 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (1.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2021-03-08 16:34:52 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 516ms (Views: 516.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:34:52 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (1.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:34:57 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+
+Started GET "/" for ::1 at 2021-03-08 16:36:16 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 415ms (Views: 415.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/todos" for ::1 at 2021-03-08 16:36:17 -0500
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (9.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/api/todos_controller.rb:10
+Completed 200 OK in 13ms (Views: 3.0ms | ActiveRecord: 9.4ms)
+
+
+Started POST "/api/todos" for ::1 at 2021-03-08 16:36:20 -0500
+Processing by Api::TodosController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: todo:
+  app/controllers/api/todos_controller.rb:40:in `todo_params'
+  app/controllers/api/todos_controller.rb:14:in `create'
+

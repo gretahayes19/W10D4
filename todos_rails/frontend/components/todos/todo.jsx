@@ -8,12 +8,16 @@ export default class ToDo extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchTodos();
+    }
+
     render() {
         const todos = this.props.todos
         return(
             <div>
 
-                <TodoForm receiveTodo={this.props.receiveTodo}/>
+                <TodoForm createTodo={this.props.createTodo}/>
 
                 <h2>All Todos</h2>
                 <ul>

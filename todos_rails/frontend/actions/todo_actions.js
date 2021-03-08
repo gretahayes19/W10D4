@@ -34,3 +34,13 @@ export const fetchTodos1 = () => {
         })
     }
 }
+
+
+export const createTodoAction = () => {
+    return (dispatch) => {
+        return APIUtil.createTodo().then((todo)  => {
+            console.log(todo)
+            return dispatch(receiveTodo(todo))
+        })
+    }
+}
